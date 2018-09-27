@@ -3,7 +3,7 @@
 
 
 /* Yoshi */
-int our_strlen( char * )
+int our_strlen( char * s)
 {
     // code here
     return 0;
