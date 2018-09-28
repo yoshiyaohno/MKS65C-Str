@@ -48,7 +48,7 @@ char * our_strchr( char *s, char c )
 char * our_strstr( char *haystack, char * needle )
 {
     char *nscan, *hscan;
-    while( *haystack++ ) {
+    while( *haystack ) {
         // printf("h:%c n:%c\n", *haystack, *needle);
         if( *haystack == *needle ) {
             nscan = needle;
@@ -59,6 +59,7 @@ char * our_strstr( char *haystack, char * needle )
                 if( !*hscan ) break;
             }
         }
+        ++haystack;
     }
     return (char*) 0;
 
