@@ -22,10 +22,14 @@ char * our_strncpy( char *dest, char *source, int n)
 
 
 /* Yoshi */
-char * our_strcat( char *dest, char *source )
+char * our_strcat( char *dest, char *src )
 {
-    // code here
-    return (char*) 0;
+    char *scan = dest;
+    while( *scan++);
+    scan--; // scan now points to the terminating null
+    while( *src )
+        *scan++ = *src++;
+    return dest;
 }
 
 // char * our_strncat( char *dest, char *source, int n);
