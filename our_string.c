@@ -11,13 +11,19 @@ int our_strlen( char * s)
     return len;
 }
 
-// char * our_strcpy( char *dest, char *source ) { } 
+// char * our_strcpy( char *dest, char *source ) { }
 
 /* Mandy */
-char * our_strncpy( char *dest, char *source, int n)
-{
-    // code here
-    return (char*) 0;
+char * our_strncpy( char *dest, char *source, int n){
+  int i;
+  for(i=0;i<n;i++){
+    if(our_strlen(source)<i){
+      *(dest++) = '\0';
+    }else{
+      *(dest++) = *(source++);
+    }
+  }
+  return *dest;
 }
 
 
@@ -33,14 +39,14 @@ char * our_strcat( char *dest, char *source )
 /* Mandy */
 int our_strcmp( char *s1, char *s2 )
 {
-    // code here
-    return 0;
+    int cmp = 0;
+    return cmp;
 }
 
 /* Mandy */
 char * our_strchr( char *s, char c )
 {
-    // code here
+
     return (char*) 0;
 }
 
@@ -64,10 +70,3 @@ char * our_strstr( char *haystack, char * needle )
     return (char*) 0;
 
 }
-
-
-
-
-
-
-
