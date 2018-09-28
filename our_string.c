@@ -5,8 +5,10 @@
 /* Yoshi */
 int our_strlen( char * s)
 {
-    // code here
-    return 0;
+    int len = 0;
+    while( *s++)
+        ++len;
+    return len;
 }
 
 // char * our_strcpy( char *dest, char *source ) { } 
