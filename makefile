@@ -11,3 +11,6 @@ tester.o : tester.c our_string.h
 
 clean :
 	rm stringtest *.o
+
+run :
+	./stringtest
