@@ -47,6 +47,26 @@ char * our_strchr( char *s, char c )
 /* Yoshi (bonus) */
 char * our_strstr( char *haystack, char * needle )
 {
-    // code here
+    char *nscan, *hscan;
+    while( *haystack++ ) {
+        // printf("h:%c n:%c\n", *haystack, *needle);
+        if( *haystack == *needle ) {
+            nscan = needle;
+            hscan = haystack;
+            while( *hscan++ == *nscan++ ) {
+                // printf("%c", *hscan);
+                if( !*nscan ) return haystack;
+                if( !*hscan ) break;
+            }
+        }
+    }
     return (char*) 0;
+
 }
+
+
+
+
+
+
+
