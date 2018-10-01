@@ -15,15 +15,16 @@ int our_strlen( char * s)
 
 /* Mandy */
 char * our_strncpy( char *dest, char *source, int n){
-  int i;
-  for(i=0;i<n;i++){
-    if(our_strlen(source)<i){
-      *(dest++) = '\0';
-    }else{
-      *(dest++) = *(source++);
-    }
+  if(sizeof(dest) < n){
+    return NULL;
   }
-  return *dest;
+  char *d = dest;
+  while(n && *source){
+    *dest++ = *source++;
+    n-=1;
+  }
+  *dest = '\0';
+  return d;
 }
 
 
@@ -41,17 +42,29 @@ char * our_strcat( char *dest, char *src )
 // char * our_strncat( char *dest, char *source, int n);
 
 /* Mandy */
-int our_strcmp( char *s1, char *s2 )
-{
-    int cmp = 0;
-    return cmp;
+int our_strcmp( char *s1, char *s2 ){
+  int i;
+  for(i=0;i<our_strlen(s1)+1;i++){
+    if(*s1++ == *s2++){
+    }else if(s1>s2){
+      return 1;
+    }else{
+      return -1;
+    }
+  }
+  return 0;
 }
 
 /* Mandy */
-char * our_strchr( char *s, char c )
-{
-
-    return (char*) 0;
+char * our_strchr( char *s, char c ){
+  while(*s != c && *s) {
+      s++;
+   }
+   if(*s == c) {
+      return s;
+   }else {
+      return NULL;
+   }
 }
 
 /* Yoshi (bonus) */
