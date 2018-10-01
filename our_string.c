@@ -27,7 +27,6 @@ char * our_strncpy( char *dest, char *source, int n){
   return d;
 }
 
-
 /* Yoshi */
 char * our_strcat( char *dest, char *src )
 {
