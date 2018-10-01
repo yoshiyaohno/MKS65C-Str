@@ -15,13 +15,29 @@ int our_strlen( char * s)
 
 /* Mandy */
 char * our_strncpy( char *dest, char *source, int n){
-  return dest;
+  if(sizeof(dest) < n){
+    return NULL;
+  }
+  char *d = dest;
+  while(n && *source){
+    *dest++ = *source++;
+    n-=1;
+  }
+  *dest = '\0';
+  return d;
 }
-
 
 /* Mandy */
 char * our_strcat( char *dest, char *source ){
-    return dest;
+  if(sizeof(dest)<(our_strlen(dest)+our_strlen(source)+1)){
+    return NULL;
+  }
+  char *result = dest + our_strlen(dest);
+  while(*source != '\0'){
+     *result++ = *source++;
+   }
+   *result = '\0';
+   return dest;
 }
 
 // char * our_strncat( char *dest, char *source, int n);

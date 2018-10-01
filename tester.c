@@ -11,10 +11,31 @@ int main()
     printf("\tus: %d\n\tlib: %lu\n", our_strlen("oof"), strlen("oof"));
 
     /* strncpy testing */
-    
+    char a[10] = "";
+    char b[10] = " ";
+    char c[10] = "";
+    char d[10] = " ";
+    char e[10] = " ";
+    char f[10] = "";
+    char g[10] = " ";
+    char h[10] = "";
+    char i[10] = "dog";
+    char j[10] = "cat";
+    char k[10] = "dog";
+    char l[10] = "cat";
+    printf("\nTesting strncpy:\nCopy \" \" into \"\"\n");
+    printf("\tus:\"%s\" \n\tlib:\"%s\" \n", our_strncpy(a,b,1), strncpy(c,d,1));
+    printf("Copy \"\" into \" \"\n");
+    printf("\tus:\"%s\" \n\tlib:\"%s\" \n", our_strncpy(e,f,3), strncpy(g,h,1));
+    printf("Copy \"cat\" into \"dog\"\n");
+    printf("\tus:%s \n\tlib:%s \n", our_strncpy(i,j,3), strncpy(k,l,3));
 
     /* strcat testing */
+    char z[8] = "cat";
+    char y[] = "dog";
 
+    // printf("\nTesting strcat:\nAppend \"dog\" to \"cat\"\n");
+    // printf("\tus:%s \n\tlib:%s \n", our_strcat(z,y), strcat(z,y));
 
     /* strcmp testing */
     printf("\nTesting strcmp:\nCompare \"\" with \"\"\n ");
