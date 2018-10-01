@@ -34,10 +34,10 @@ char * our_strcat( char *dest, char *source ){
   }
   char *result = dest + our_strlen(dest);
   while(*source != '\0'){
-     *result++ = *source++;
-   }
-   *result = '\0';
-   return dest;
+    *result++ = *source++;
+  }
+  *result = '\0';
+  return dest;
 }
 
 // char * our_strncat( char *dest, char *source, int n);

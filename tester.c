@@ -13,29 +13,33 @@ int main()
     /* strncpy testing */
     char a[10] = "";
     char b[10] = " ";
-    char c[10] = "";
-    char d[10] = " ";
-    char e[10] = " ";
-    char f[10] = "";
-    char g[10] = " ";
-    char h[10] = "";
-    char i[10] = "dog";
-    char j[10] = "cat";
-    char k[10] = "dog";
-    char l[10] = "cat";
+    char c[10] = " ";
+    char d[10] = "";
+    char e[10] = "dog";
+    char f[10] = "cat";
     printf("\nTesting strncpy:\nCopy \" \" into \"\"\n");
-    printf("\tus:\"%s\" \n\tlib:\"%s\" \n", our_strncpy(a,b,1), strncpy(c,d,1));
+    printf("\tus:\"%s\" \n\tlib:\"%s\" \n", our_strncpy(a,b,1), strncpy(a,b,1));
     printf("Copy \"\" into \" \"\n");
-    printf("\tus:\"%s\" \n\tlib:\"%s\" \n", our_strncpy(e,f,3), strncpy(g,h,1));
+    printf("\tus:\"%s\" \n\tlib:\"%s\" \n", our_strncpy(c,d,3), strncpy(c,d,1));
     printf("Copy \"cat\" into \"dog\"\n");
-    printf("\tus:%s \n\tlib:%s \n", our_strncpy(i,j,3), strncpy(k,l,3));
+    printf("\tus:%s \n\tlib:%s \n", our_strncpy(e,f,3), strncpy(e,f,3));
 
     /* strcat testing */
-    char z[8] = "cat";
-    char y[] = "dog";
+    /* Repeats appending the second word for unknown reason (have to increase dest
+        size by 3 to avoid Abort trap: 6 error)*/
+    char z[4] = "cat";
+    char y[] = "";
+    char x[7] = "";
+    char w[] = "cat";
+    char v[10] = "cat";
+    char u[] = "dog";
 
-    // printf("\nTesting strcat:\nAppend \"dog\" to \"cat\"\n");
-    // printf("\tus:%s \n\tlib:%s \n", our_strcat(z,y), strcat(z,y));
+    printf("\nTesting strcat:\nAppend \"\" to \"cat\"\n");
+    printf("\tus:%s \n\tlib:%s \n", our_strcat(z,y), strcat(z,y));
+    printf("\nTesting strcat:\nAppend \"cat\" to \"\"\n");
+    printf("\tus:%s \n\tlib:%s \n", our_strcat(x,w), strcat(x,w));
+    printf("\nTesting strcat:\nAppend \"dog\" to \"cat\"\n");
+    printf("\tus:%s \n\tlib:%s \n", our_strcat(v,u), strcat(v,u));
 
     /* strcmp testing */
     printf("\nTesting strcmp:\nCompare \"\" with \"\"\n ");
