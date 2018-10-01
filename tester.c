@@ -11,22 +11,28 @@ int main()
     printf("\tus: %d\n\tlib: %lu\n", our_strlen("oof"), strlen("oof"));
 
     /* strncpy testing */
-    printf("\nTesting strncpy:\nCopy \"\" into \"\"\n");
-    printf("\tus: \n\tlib: \n", our_strncpy("","",5), strcpy("","",5));
-    printf("Copy \"cat\" into \"\"\n");
-    printf("\tus: \n\tlib: \n", our_strncpy("cat","",5), strcpy("cat","",5));
-    printf("Copy \"cat\" into \"dog\"\n");
-    printf("\tus: \n\tlib: \n", our_strncpy("cat","dog",5), strcpy("cat","dog",5));
+    
 
     /* strcat testing */
 
+
     /* strcmp testing */
-    printf("\nTesting strncpy:\nCopy \"\" into \"\"\n");
-    printf("\tus: \n\tlib: \n", our_strncpy("","",5), strlen("","",5));
+    printf("\nTesting strcmp:\nCompare \"\" with \"\"\n ");
+    printf("\tus:%d \n\tlib:%d \n", our_strcmp("",""), strcmp("",""));
+    printf("Compare \"hello\" with \"hello\"\n ");
+    printf("\tus:%d \n\tlib:%d \n", our_strcmp("hello","hello"), strcmp("hello","hello"));
+    printf("Compare \"hello\" with \"hi\"\n ");
+    printf("\tus:%d \n\tlib:%d \n", our_strcmp("hello","hi"), strcmp("hello","hi"));
+    printf("Compare \"hi\" with \"hello\"\n ");
+    printf("\tus:%d \n\tlib:%d \n", our_strcmp("hi","hello"), strcmp("hi","hello"));
 
     /* strchr testing */
-    printf("\nTesting strncpy:\nCopy \"\" into \"\"\n");
-    printf("\tus: \n\tlib: \n", our_strncpy("","",5), strlen("","",5));
+    printf("\nTesting strchr:\nFind \' \' in \"\"\n");
+    printf("\tus:%p \n\tlib:%p \n", our_strchr("",' '), strchr("",' '));
+    printf("Find \'b\' in \"cat\"\n");
+    printf("\tus:%p \n\tlib:%p \n", our_strchr("cat",'b'), strchr("cat",'b'));
+    printf("Find \'a\' in \"cat\"\n");
+    printf("\tus:%p \n\tlib:%p \n", our_strchr("cat",'a'), strchr("cat",'a'));
 
     /* strstr() testing */
     // general test
